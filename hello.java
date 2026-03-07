@@ -1,6 +1,6 @@
 public class hello{
     public static void main(String[] args){
-        System.out.println("Welcome to Hello world");
-        System.out.println("Numbers addition: "+(500+60));
+        System.out.println("Welcome to Jenkins");
+        System.out.println("Numbers addition: "+(700+60));
     }
 }
