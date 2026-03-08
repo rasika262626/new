@@ -1,26 +1,16 @@
 pipeline {
     agent any
 
+    triggers {
+        githubPush()
+        cron('H/5 * * * *')
+    }
+
     stages {
-        stage('Fetch') {
-            steps {
-                echo 'Fetching from repo'
-                git 'https://github.com/rasika262626/new.git'
-            }
-        }
-        
         stage('Build') {
             steps {
-                echo 'Building in Progress'
-                bat 'javac hello.java'
+                echo 'Build triggered by GitHub push or cron schedule'
             }
         }
-        stage('execute') {
-            steps {
-                echo 'Executed'
-                bat 'java hello'
-            }
-        }
-        
     }
 }
